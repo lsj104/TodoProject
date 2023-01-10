@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3, U+0030-0039;
+}
+
+.main-panel {
+	font-family: 'KyoboHand';
+	font-size: 20px;
+}

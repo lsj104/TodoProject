@@ -1,0 +1,127 @@
+/*@font-face {*/
+/*    font-family: 'KOTRAHOPE';*/
+/*    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: 'GangwonEduSaeeum_OTFMediumA';*/
+/*    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
+
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*@font-face {*/
+/*    font-family: 'Pretendard-Regular';*/
+/*    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');*/
+/*    font-weight: 400;*/
+/*    font-style: normal;*/
+/*}*/
+
+html {
+    background-color:#fff;
+    color:#32353a;
+    font-family:Tahoma, Verdana, Segoe, sans-serif;
+    line-height:1.5;
+}
+
+body {
+    margin:0;
+}
+
+h1 {
+    /*font-family: 'KOTRAHOPE';*/
+    /*font-family:'American Typewriter', 'Rockwell Extra Bold', 'Book Antiqua', Georgia, serif;*/
+    font-family: 'ONE-Mobile-POP';
+    /*font-family: 'Pretendard-Regular';*/
+    /*color: #8FBC8F;*/
+    color: #5EA470;
+    font-size:2em;
+}
+
+/**
+* Components
+*/
+.counter {
+    margin-bottom:1rem;
+    border-bottom:.1875em dashed #d2d6dd;
+}
+
+.tagline {
+    font-size:1.125em;
+    margin:2rem 1.5rem;
+}
+
+.calories {
+    color:#8b919b;
+    font-size:.875em;
+}
+
+.splash {
+    position: relative;
+    height:100vh;
+    max-width:30em;
+    text-align:center;
+}
+
+.splash {
+    box-sizing:border-box;
+    max-width:30em;
+    margin:0 auto;
+    padding:1.5em;
+}
+
+
+/**
+* Header animation
+*/
+.counter {
+    position:relative;
+    padding-top:30vh;
+}
+
+.counter h1 {
+    position:relative;
+    text-align:center;
+    margin:0;
+    line-height: .625;
+    z-index:2;
+    transform-origin: bottom center;
+}
+
+.dish {
+    color:#e89c2b;
+    position:absolute;
+    width:1em;
+    height:1em;
+    margin-top:-.75em;
+    margin-left:-.5em;
+    font-size:2rem;
+    top:0;
+    transform:translateY(-3em);
+    transition-duration:.75s;
+    transition-timing-function:ease-in;
+    transition-property:transform;
+    z-index:1;
+}
+
+.dish.drop {
+    transform:translateY(30vh);
+}
+
+.nommer {
+    position:absolute;
+    bottom:2em;
+    margin-left:-1em;
+    color:rgba(0,0,0,.5);
+    font-size:1.5rem;
+    transform-origin:bottom center;
+}

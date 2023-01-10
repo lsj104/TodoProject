@@ -1,0 +1,111 @@
+프로젝트 명 : TodoProject
+context root : todo
+
+TodoProject > lib > cos.jar
+				  > json-simple-1.1.1.jar
+				  > jstl-1.2.jar
+				  > lombok.jar
+				  > ojdbc6.jar
+				  > activation-1.1.1.jar
+				  > javax.mail-api-1.6.2.jar
+				  > mail-1.4.7.jar
+				  
+* 폴더
+webapp > asset
+			> css
+			> js
+			> pic
+				> profile
+				> sample
+			> favicon.ico (나중에 추가)
+			
+			
+webapp > WEB-INF > views
+						> member
+						> challenge
+						> board
+						> chart
+						> item
+
+
+* 패키지
+	com.test.todo 
+				> Template.java
+				> Home.java
+				
+	com.test.todo.member
+				> Login.java
+				> Logout.java
+				> LoginOk.java
+				> LogoutOk.java
+				> Register.java
+				> RegisterOk.java
+				> Unregister.java
+				> UnregisterOk.java
+				> MyPage.java
+				> MyPageEdit.java
+				> FindPw.java
+				> MyPoint.java
+				
+
+	com.test.todo.challenge
+				> ChallengeMain.java
+				> ChallengeCreate.java
+				
+	com.test.todo.board
+				> BoardMain.java
+				> BoardCreate.java
+				> Comment.java
+	
+	com.test.todo.chart
+				> Chart.java
+				
+	com.test.todo.item
+				> Itemlist.java
+	
+	
+	
+	
+	views 
+		> template.jsp
+		> home.jsp
+		
+		
+	
+	
+* 분업
+- 로그인(임수진)
+- 회원가입(홍서진)
+- 챌린지(최유빈)
+- 게시판 (남태현)
+- 차트 
+- 마이페이지(개인정보 수정, 포인트 내역, 회원탈퇴) (김경현)
+- 아이템 페이지 DBUtil.java, 로딩페이지 (김경하)
+
+연두색(#9dbe43)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
