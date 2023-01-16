@@ -8,120 +8,112 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * CirDAO 클래스
+ * 
+ * @author 4조
+ */
 public class CirDAO {
 
-    private Connection conn;
-    private Statement stat;
-    private PreparedStatement pstat;
-    private ResultSet rs;
+	private Connection conn;
+	private Statement stat;
+	private PreparedStatement pstat;
+	private ResultSet rs;
 
-    public CirDAO() {
-        conn = DBUtil.open();
-    }
+	/**
+	 * 
+	 * DB연결
+	 * 
+	 */
+	public CirDAO() {
+		conn = DBUtil.open();
+	}
 
-    public ArrayList<CirDTO> listChart1(CirDTO dto) {
+	/**
+	 * 로그인한 회원의 원형 시간표 데이터를 가져오는 메소드
+	 * 
+	 * @param dto 원형시간표 객체
+	 * @return 일정 list
+	 */
+	public ArrayList<CirDTO> listChart1(CirDTO dto) {
 
-        try {
+		try {
 
-            String sql = "select * from TBLCIRCLETABLE where MSEQ=?";
+			String sql = "select * from TBLCIRCLETABLE where MSEQ=?";
 
-            pstat = conn.prepareStatement(sql);
-            pstat.setString(1, dto.getMseq());
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getMseq());
 
-            rs = pstat.executeQuery();
+			rs = pstat.executeQuery();
 
-            ArrayList<CirDTO> list = new ArrayList<CirDTO>();
+			ArrayList<CirDTO> list = new ArrayList<CirDTO>();
 
-            while (rs.next()) {
-                CirDTO result = new CirDTO();
-                result.setSeq(rs.getString("seq"));
+			while (rs.next()) {
+				CirDTO result = new CirDTO();
+				result.setSeq(rs.getString("seq"));
 //                result.setNickname(rs.getString("nickname"));
-                result.setContent(rs.getString("content"));
-                result.setStarttime(rs.getString("starttime"));
-                result.setEndtime(rs.getString("endtime"));
+				result.setContent(rs.getString("content"));
+				result.setStarttime(rs.getString("starttime"));
+				result.setEndtime(rs.getString("endtime"));
 //                result.setMseq(rs.getString("mseq"));
 
-                list.add(result);
+				list.add(result);
 
-            }
+			}
 
-            return list;
+			return list;
 
-
-        } catch (Exception e) {
+		} catch (Exception e) {
 //            System.out.println("CirDAO.listChart1");
-            e.printStackTrace();
-        }
+			e.printStackTrace();
+		}
 
-        return null;
-    }
+		return null;
+	}
 
-    public void add(CirDTO dto) {
+	/**
+	 * 
+	 * 원형 시간표 추가 메소드
+	 * 
+	 * @param dto 원형시간표 객체
+	 */
+	public void add(CirDTO dto) {
 
-        try {
-            CirDAO dao = new CirDAO();
+		try {
+			CirDAO dao = new CirDAO();
 
-            String sql = "insert into tblCircletable values (seqCircleTable.nextval, ? , ? , ? , ? )";
+			String sql = "insert into tblCircletable values (seqCircleTable.nextval, ? , ? , ? , ? )";
 
-            pstat = conn.prepareStatement(sql);
-            pstat.setString(1, dto.getContent());
-            pstat.setString(2, dto.getStarttime());
-            pstat.setString(3, dto.getEndtime());
-            pstat.setString(4, dto.getMseq());
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getContent());
+			pstat.setString(2, dto.getStarttime());
+			pstat.setString(3, dto.getEndtime());
+			pstat.setString(4, dto.getMseq());
 
-            rs = pstat.executeQuery();
+			rs = pstat.executeQuery();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-    }
+	}
 
-    public int del(String mseq) {
-        try {
-            String sql = "delete from TBLCIRCLETABLE where MSEQ = ?";
-            pstat = conn.prepareStatement(sql);
-            pstat.setString(1, mseq);
-            return pstat.executeUpdate();
-        } catch (Exception e) {
+	/**
+	 * 원형 시간표 삭제 메소드
+	 * 
+	 * @param mseq 회원번호
+	 * @return 삭제 성공: 1, 실패: 0
+	 */
+	public int del(String mseq) {
+		
+		try {
+			String sql = "delete from TBLCIRCLETABLE where MSEQ = ?";
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, mseq);
+			return pstat.executeUpdate();
+		} catch (Exception e) {
 
-        }
-        return 0;
-    }
+		}
+		return 0;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

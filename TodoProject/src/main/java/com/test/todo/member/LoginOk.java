@@ -10,6 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * LoginOK 클래스
+ * 로그인 했을 때 사용자 이메일, pw를 받아옵니다.
+ * 로그인 했을 때 사용자 카테고리, 번호, 비밀번호, 프로필이미지를 세션에 저장합니다.
+ * @author 4조
+ */
 @WebServlet("/member/loginok.do")
 public class LoginOk extends HttpServlet {
     @Override
@@ -28,6 +34,11 @@ public class LoginOk extends HttpServlet {
         MemberDTO result = dao.login(dto);
         
         MemberDTO option = dao.option(dto, email);
+        
+        MemberDTO subToDo = dao.isSubToDo(email);
+        MemberDTO timeTable = dao.isTimeTable(email);
+        MemberDTO timeCal = dao.isTimeCal(email);
+        MemberDTO timeCir = dao.isTimeCir(email);
 
         if (result != null) {
 
@@ -45,6 +56,13 @@ public class LoginOk extends HttpServlet {
             session.setAttribute("theme", option.getTheme());
             session.setAttribute("fonttype", option.getFonttype());
             
+            session.setAttribute("subToDo",subToDo.getSubToDo());
+            session.setAttribute("timeTable",timeTable.getTimeTable());
+            session.setAttribute("timeCal",timeCal.getTimeCal());
+            session.setAttribute("timeCir",timeCir.getTimeCir());
+            
+            
+            
             PlusRewardDAO pdao = new PlusRewardDAO();
             
             int isLoginPoint = pdao.isLoginPoint((String)session.getAttribute("auth"), 2);
@@ -53,6 +71,7 @@ public class LoginOk extends HttpServlet {
             
             if (isLoginPoint == 0) { 
             	int prResult = pdao.getPoint((String)session.getAttribute("auth"), 2);
+            	pdao.updatePoint((String)session.getAttribute("auth"));
             } 
             
             resp.sendRedirect("/todo/splash/loading.do");

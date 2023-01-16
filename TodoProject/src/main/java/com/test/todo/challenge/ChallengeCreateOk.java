@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * 챌린지 생성완료 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/challenge/challengecreateok.do")
 public class ChallengeCreateOk extends HttpServlet {
 	

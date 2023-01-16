@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * 게시판에서 모든 게시글 출력 및 검색어에 따른 게시글을 출력하는 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/board/boardmain.do")
 public class BoardMain extends HttpServlet {
 

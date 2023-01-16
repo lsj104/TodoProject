@@ -2,6 +2,13 @@ package com.test.todo.challenge;
 
 import lombok.Data;
 
+/**
+ * 
+ * ChallengeDTO
+ * 
+ * @author 4조
+ *
+ */
 @Data
 public class ChallengeDTO {
 
@@ -15,6 +22,18 @@ public class ChallengeDTO {
 	private String mission;
 	
 	
+	/**
+	 * ChallengeDTO 생성자
+	 * 
+	 * @param seq 챌린지 번호
+	 * @param createDate 생성날짜
+	 * @param duedatenumber 모집기간
+	 * @param membercnt 모집인원
+	 * @param cseq 카테고리 번호
+	 * @param name 챌린지 이름
+	 * @param hseq  회원번호
+	 * @param mission 공동미션
+	 */
 	public ChallengeDTO(int seq, String createDate, String duedatenumber, String membercnt, int cseq, String name,
 			String hseq, String mission) {
 		

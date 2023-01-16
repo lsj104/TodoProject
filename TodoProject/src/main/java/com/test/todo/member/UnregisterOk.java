@@ -10,6 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * UnregisterOk 클래스
+ * 회원의 회원 탈퇴
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/member/unregisterok.do")
 public class UnregisterOk extends HttpServlet {
 

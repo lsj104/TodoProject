@@ -12,7 +12,14 @@ import javax.servlet.http.HttpSession;
 
 import com.test.todo.member.MemberDAO;
 import com.test.todo.member.MemberDTO;
-
+/**
+ * 
+ * 아이템 구매 클래스
+ * 상점에서 구매한 아이템을 구매 내역에 추가하고 사용자의 옵션을 변경한다. 
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/item/purchase.do")
 public class Purchase extends HttpServlet {
 
@@ -25,7 +32,6 @@ public class Purchase extends HttpServlet {
 		
 		//구매 아이템
 		String itemSeq = req.getParameter("itemSeq");
-		String messegeChange = req.getParameter("messegeChange");
 		
 		MinusRewardDAO mrdao = new MinusRewardDAO();
 		int result = mrdao.minusRewaed((String)session.getAttribute("auth"), itemSeq);
@@ -37,7 +43,6 @@ public class Purchase extends HttpServlet {
 		int searchTimeTable = idao.searchTimeTable(itemSeq);
 		int searchCal = idao.searchCal(itemSeq);
 		int searchCir = idao.searchCir(itemSeq);
-		int searchMessege = idao.searchMessege(itemSeq);
 		
 		MemberDAO mdao = new MemberDAO();
 		MemberDTO mdto = new MemberDTO();
@@ -60,19 +65,20 @@ public class Purchase extends HttpServlet {
 		}
 		
 		if (searchTodo == 1 ) {
-			session.setAttribute("subToDo", "y");
+			MemberDTO  subToDo = mdao.isSubToDo((String)session.getAttribute("auth"));
+			session.setAttribute("subToDo", subToDo.getSubToDo());
 		}
 		if (searchTimeTable  == 1 ) {
-			session.setAttribute("timeTable", "y");
+			MemberDTO timeTable = mdao.isTimeTable((String)session.getAttribute("auth"));
+			session.setAttribute("timeTable",timeTable.getTimeTable());
 		}
 		if (searchCal == 1 ) {
+			MemberDTO timeCal = mdao.isTimeCal((String)session.getAttribute("auth"));
 			session.setAttribute("timeCal", "y");
 		}
 		if (searchCir == 1 ) {
+			MemberDTO timeCir = mdao.isTimeCir((String)session.getAttribute("auth"));
 			session.setAttribute("timeCir", "y");
-		}
-		if (searchMessege == 1 ) {
-			mdao.messegeChange((String)session.getAttribute("auth"),messegeChange);
 		}
 		
 		PrintWriter writer = resp.getWriter();		

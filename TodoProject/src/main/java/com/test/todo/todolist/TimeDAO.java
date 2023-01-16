@@ -8,17 +8,35 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+
+/**
+ * TimeDAO 클래스
+ * 시간표
+ * @author 4조
+ */
 public class TimeDAO {
     private Connection conn;
     private Statement stat;
     private PreparedStatement pstat;
     private ResultSet rs;
 
+    /**
+	 * 
+	 * DB연결
+	 * 
+	 */
     public TimeDAO() {
         conn = DBUtil.open();
     }
 
 
+    /**
+     * 
+     * 로그인한 회원의 시간표 데이터를 가져오는 메소드
+     * 
+     * @param dto 로그인한 회원의 시간표 객체
+     * @return 회원의 시간표 리스트
+     */
     public ArrayList<TimeDTO> timetable(TimeDTO dto) {
         try {
             String sql = "select * from TBLTIMEBLOCK where MSEQ=?";
@@ -46,6 +64,11 @@ public class TimeDAO {
         return null;
     }
 
+    /**
+     * 시간표 추가 메소드
+     * 
+     * @param dto 추가하려는 시간표 객체
+     */
     public void add(TimeDTO dto) {
 
         System.out.println(dto);
@@ -89,6 +112,12 @@ public class TimeDAO {
         }
     }
 
+    /**
+     * 로그인한 사용자가 추가하려는 시간에 데이터가 존재하는지 확인하는 메소드
+     * 
+     * @param dto 추가하려는 시간표 객체
+     * @return 존재: 양의 정수 반환  
+     */
     private int exist(TimeDTO dto) {
 
         try {
@@ -132,6 +161,12 @@ public class TimeDAO {
 
     }
 
+    /**
+     * 시간표를 지우는 메소드
+     * 
+     * @param mseq 회원 번호
+     * @return 삭제 성공: 1, 실패: 0 반환
+     */
     public int del(String mseq) {
         try {
             String sql = "delete from TBLTIMEBLOCK where MSEQ = ?";

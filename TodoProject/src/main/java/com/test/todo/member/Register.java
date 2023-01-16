@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 회원가입 페이지를 실행을 위한 서블릿
+ * @author 4조
+ *
+ */
 @WebServlet("/member/register.do")
 public class Register extends HttpServlet {
 

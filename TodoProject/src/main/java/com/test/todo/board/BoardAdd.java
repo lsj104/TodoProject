@@ -9,6 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 
+ * 게시글 추가 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/board/boardadd.do")
 public class BoardAdd extends HttpServlet {
 

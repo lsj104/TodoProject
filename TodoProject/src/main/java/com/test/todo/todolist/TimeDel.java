@@ -10,6 +10,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
+/**
+ * TimeDel클래스
+ * 시간표 삭제
+ * @author 4조
+ */
 @WebServlet("/todolist/timedel.do")
 public class TimeDel extends HttpServlet {
     @Override

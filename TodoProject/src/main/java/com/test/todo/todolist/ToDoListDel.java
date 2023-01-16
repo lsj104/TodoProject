@@ -11,6 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * ToDoList  삭제 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/todolist/todolistdel.do")
 public class ToDoListDel extends HttpServlet {
 
@@ -22,9 +29,11 @@ public class ToDoListDel extends HttpServlet {
 		HttpSession session = req.getSession();
 		
 		String seq = req.getParameter("seq");
+		String type = req.getParameter("type");
+		
 		System.out.println("seq:"+seq);
 		ToDoListDAO dao = new ToDoListDAO();
-		int result = dao.todolistDel(seq);
+		int result = dao.todolistDel(seq, type);
 		
 		
 		resp.setCharacterEncoding("UTF-8");

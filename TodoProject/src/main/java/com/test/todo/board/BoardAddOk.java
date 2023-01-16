@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * BoardAddOk 클래스
+ * 게시글 추가 상세
+ * @author 4조
+ */
 @WebServlet("/board/boardaddok.do")
 public class BoardAddOk extends HttpServlet {
 

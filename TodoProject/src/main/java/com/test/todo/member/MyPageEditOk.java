@@ -13,6 +13,14 @@ import javax.servlet.http.HttpSession;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+/**
+ * 
+ * MyPageEditOk 클래스
+ * 회원이 입력한 프로필 사진, 닉네임, 비밀번호를 검사하고 결과값을 반환합니다.
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/member/mypageeditok.do")
 public class MyPageEditOk extends HttpServlet {
 

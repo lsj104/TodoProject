@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Edit 클래스 게시글 수정
+ * 
+ * @author 4조
+ */
 @WebServlet("/board/edit.do")
 public class Edit extends HttpServlet {
 

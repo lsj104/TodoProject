@@ -10,6 +10,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Cirmain 클래스
+ * 원형 시간표 클래스
+ * @author 4조
+ */
 @WebServlet("/todolist/cirmain.do")
 public class CirMain extends HttpServlet {
 

@@ -11,6 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
+/**
+ * 
+ * MyPoint 클래스
+ * 회원의 획득, 차감된 포인트 내역을 조회합니다.
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/member/mypoint.do")
 public class MyPoint extends HttpServlet {
 

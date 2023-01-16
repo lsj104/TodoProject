@@ -23,14 +23,19 @@
                     </a>
                     <div class="collapse" id="ui-basic">
               			<ul class="nav flex-column sub-menu">
-                			<li class="nav-item"> <a class="nav-link" href="/todo/todolist/todolistmain.do">ToDoList</a></li>
-							<c:if test="${not empty auth and timeTable == 'y'}">			
+                			
+                			<li class="nav-item"> <a class="nav-link" href="/todo/todolist/todolistmain.do">ToDoList_main</a></li>
+							
+							<c:if test="${not empty auth and subToDo != null}">			
+                			<li class="nav-item"> <a class="nav-link" href="/todo/todolist/todolistsub.do">ToDolist_sub</a></li>
+                			</c:if>
+							<c:if test="${not empty auth and timeTable != null}">			
                 			<li class="nav-item"> <a class="nav-link" href="/todo/todolist/timetable.do">TimeTable</a></li>
                 			</c:if>
-                			<c:if test="${not empty auth and timeCal == 'y' }">
+                			<c:if test="${not empty auth and timeCal != null}">
                 			<li class="nav-item"> <a class="nav-link" href="/todo/calmain.do">Calendar</a></li>
                 			</c:if>
-                			<c:if test="${not empty auth and timeCir == 'y'}">	
+                			<c:if test="${not empty auth and timeCir != null}">	
                 			<li class="nav-item"> <a class="nav-link" href="/todo/todolist/cirmain.do">Circle</a></li>
               				</c:if>
               			</ul>

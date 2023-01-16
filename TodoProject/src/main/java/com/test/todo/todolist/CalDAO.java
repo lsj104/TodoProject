@@ -8,8 +8,24 @@ import java.util.List;
 
 import com.test.todo.DBUtil;
 
+/**
+ * 
+ * CalDAO
+ * 
+ * @author 4조
+ *
+ */
 public class CalDAO {
 
+	/**
+	 * 
+	 * 일정을 추가하는 메소드
+	 * 
+	 * @param content 내용
+	 * @param start_date 시작일
+	 * @param end_date 종료일
+	 * @param mseq 회원번호
+	 */
 	public void setCalList(String content, String start_date, String end_date, int mseq) {
 		Connection conn = null;
 		PreparedStatement stat = null;
@@ -41,6 +57,12 @@ public class CalDAO {
 		
 	}
 	
+	/**
+	 * 
+	 * 일정 삭제 메소드
+	 * 
+	 * @param seq 일정 번호
+	 */
 	public void delCalList(int seq) {
 		Connection conn = null;
 		PreparedStatement stat = null;
@@ -70,7 +92,13 @@ public class CalDAO {
 	}
 	
 	
-	
+	/**
+	 * 
+	 * 일정을 출력하는 메소드
+	 * 
+	 * @param mseq 회원번호
+	 * @return 일정 list
+	 */
 	public List<CalDTO> getCalList(String mseq) {
 		Connection conn = null;
 		PreparedStatement stat = null;

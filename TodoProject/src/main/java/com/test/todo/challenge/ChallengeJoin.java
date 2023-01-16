@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
+/**
+ * 
+ * 챌린지 가입 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/challenge/challengejoin.do") // 챌린지 가입 java
 public class ChallengeJoin extends HttpServlet {
 

@@ -10,7 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
+/**
+ * 
+ * EditOk 클래스
+ * 회원이 설정한 카테고리 변경 작업을 합니다.
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/member/editok.do")
 public class EditOk extends HttpServlet {
 

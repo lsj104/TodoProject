@@ -9,7 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
+/**
+ * 
+ * 일정 삭제 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/removeCal.do")
 public class RemoveCal extends HttpServlet {
 

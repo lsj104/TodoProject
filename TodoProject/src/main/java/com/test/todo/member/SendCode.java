@@ -17,6 +17,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 이메일 인증시 인증번호 발송을 위한 서블릿
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/member/sendcode.do")
 public class SendCode extends HttpServlet {
 

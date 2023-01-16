@@ -1,6 +1,7 @@
 package com.test.todo.member;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -13,6 +14,11 @@ import javax.servlet.http.HttpSession;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+/**
+ * 회원가입 한 회원의 정보 처리를 위한 서블릿
+ * @author 4조
+ *
+ */
 @WebServlet("/member/registerok.do")
 public class RegisterOk extends HttpServlet {
 
@@ -90,7 +96,7 @@ public class RegisterOk extends HttpServlet {
 			PlusRewardDAO pdao = new PlusRewardDAO();
 
 			int prResult = pdao.registerPoint();
-			
+			pdao.updatePoint();
 			dao.optionCreate();
 
 			resp.sendRedirect("login.do");

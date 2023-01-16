@@ -8,7 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
+/**
+ * 
+ * 타임테이블에 일덩을 추가하는 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/todolist/popupok.do")
 public class PopUpOk extends HttpServlet {
     @Override

@@ -9,6 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 
+ * MyPageEdit 클래스
+ * 회원 프로필 사진, 닉네임, 비밀번호 변경이 가능합니다.
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/member/mypageedit.do")
 public class MyPageEdit extends HttpServlet {
 

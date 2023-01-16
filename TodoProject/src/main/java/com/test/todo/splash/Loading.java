@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Loading 클래스
+ * @author 4조
+ */
 @WebServlet("/splash/loading.do")
 public class Loading extends HttpServlet {
     @Override

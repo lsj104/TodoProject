@@ -11,6 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * 일정 추가 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/insertCal.do")
 public class InsertCal extends HttpServlet {
 

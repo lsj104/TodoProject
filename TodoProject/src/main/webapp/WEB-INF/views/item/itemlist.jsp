@@ -148,11 +148,11 @@
 						</div>
 
 
-						<div class="modal fade" id="purchase" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="modal fade" id="purchase" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h4 class="modal-title myModalLabel">아이템 구매</h4>
+										<h4 class="modal-title purchaselLabel">아이템 구매</h4>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">×</span>
 										</button>
@@ -170,11 +170,11 @@
 							</div>
 						</div>
 
-						<div class="modal fade" id="failed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="modal fade" id="failed" tabindex="-1" role="dialog" aria-labelledby="failedLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h4 class="modal-title myModalLabel">구매 실패</h4>
+										<h4 class="modal-title failedLabel">구매 실패</h4>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">×</span>
 										</button>
@@ -190,11 +190,11 @@
 							</div>
 						</div>
 						
-						<<!-- div class="modal fade" id="messege" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="modal fade" id="message" tabindex="-1" role="dialog" aria-labelledby="messageLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h4 class="modal-title myModalLabel">응원 메세지 변경</h4>
+										<h4 class="modal-title messageLabel">응원 메세지 변경</h4>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">×</span>
 										</button>
@@ -203,16 +203,16 @@
 										<form>
 									        <div class="form-group">
 									            <label for="message-text" class="col-form-label">응원 메세지:</label>
-									            <input type="text" class="form-control" id="messegeChange">
+									            <input type="text" class="form-control" id="messageChanger" required>
 									        </div>
 										</form>
 									</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-primary" data-toggle="modal" onclick="messegeChange()">확인</button>
+										<button type="button" class="btn btn-primary" data-toggle="modal" onclick="messageChange();">확인</button>
 									</div>
 								</div>
 							</div>
-						</div> -->
+						</div> 
 
 						<div class="page-arrow">
 							<i class="fa-solid fa-chevron-right" onclick="move(${nowPage+1})"></i>
@@ -248,8 +248,6 @@
 			
 			var itemSeq = $('#itemSeq').val();
 			
-			$('#btn' + $('#itemSeq').val()).val('보유중');
-			
 			$.ajax({
 				type: 'GET',
 				url: '/todo/item/purchase.do',
@@ -257,55 +255,67 @@
 				data: 'itemSeq=' + itemSeq,
 				async: false,
 				success: function(result){
-					if(result.result > 0){
-						$('#btn' + $('#itemSeq').val()).prop('disabled', true);
-					}
 					
-					location.reload();
+					if (result > 0) {
+						
+						if (itemSeq = 9) {
+							$('#message').modal('show');
+						} else {
+							$('#btn' + $('#itemSeq').val()).prop('disabled', true);
+							$('#btn' + $('#itemSeq').val()).val('보유중');
+							location.reload();
+						}	
+						
+					} 
 					
-					if (itemSeq = 9) {
-						 messege();
-					}   
 				},
 				error: function(a,b,c) {
 					console.log(a,b,c)
 				}
 			
 			});
-			
+					
 		}
-		
-		
 		
 		function showInfo() {
 			$('#itemName').text($(event.target).data('name'));
 			$('#itemSeq').val($(event.target).data('seq'));
 		}
 		
-		/* 
-		function messege() {
-			$('#messege').modal('show');
-		}
 		
-		function messegeChange() {
+		function messageChange() {
 			
-			$.ajax({
-				type: 'GET',
-				url: '/todo/item/purchase.do',
-				dataType:'JSON',
-				data: 'messegeChange=' + $('#messegeChange').val(),
-				async: false,
-				success: function(result){
-					
-				},
-				error: function(a,b,c) {
-					console.log(a,b,c)
-				}
+			if ($('#messageChanger').val() != null) {
 			
-			});
+				$.ajax({
+					type: 'GET',
+					url: '/todo/member/messagechange.do',
+					dataType:'JSON',
+					data: 'messageChange=' + $('#messageChanger').val(),
+					async: false,
+					success: function(result){
+						
+						if (result = 0) {
+							alert('응원메세지 변경을 실패했습니다.');
+						} else {
+							$('#message').modal('hide');
+							$('#btn' + $('#itemSeq').val()).prop('disabled', true);
+							$('#btn' + $('#itemSeq').val()).val('보유중');
+							location.reload();
+						}
+						
+					},
+					error: function(a,b,c) {
+						console.log(a,b,c)
+					}
+				});
+			
+			} else {
+				$('#messageChanger').focus();
+			}
 			
 		}
- 		*/
+ 	
 	</script>
 
 </body>

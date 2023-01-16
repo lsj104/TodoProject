@@ -9,6 +9,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * TimeDelOk클래스
+ * 시간표 삭제
+ * @author 4조
+ */
 @WebServlet("/todolist/timedelok.do")
 public class TimeDelOk extends HttpServlet {
     @Override

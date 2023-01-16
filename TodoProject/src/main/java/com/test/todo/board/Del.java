@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * DelOk 클래스 게시글 삭제
+ * 
+ * @author 4조
+ */
 @WebServlet("/board/del.do")
 public class Del extends HttpServlet {
 

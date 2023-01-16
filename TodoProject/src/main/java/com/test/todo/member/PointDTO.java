@@ -1,7 +1,13 @@
 package com.test.todo.member;
 
 import lombok.Data;
-
+/**
+ * 
+ * PointDTO 클래스
+ * 포인트 관련 getter, setter
+ * 
+ * @author 4조
+ */
 @Data
 public class PointDTO {
 	

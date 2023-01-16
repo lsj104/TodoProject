@@ -11,6 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * MyPage 클래스
+ * 회원이 설정한 카테고리 변경, 개인 정보 수정, 포인트 내역 조회, 회원 탈퇴가 가능합니다.
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/member/mypage.do")
 public class MyPage extends HttpServlet {
 

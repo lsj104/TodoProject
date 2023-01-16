@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+/**
+ * Popup 클래스
+ *
+ * @author 4조
+ */
 @WebServlet("/todolist/popup.do")
 public class PopUp extends HttpServlet {
     @Override

@@ -2,6 +2,12 @@ package com.test.todo.board;
 
 import lombok.Data;
 
+/**
+ * BoardDTO 클래스
+ * 게시판 시작 글 seq, 멤버 seq, 날짜, 제목, 내용, 조회수, 이름, 닉네임, 프로필 이미지
+ * 
+ * @author 4조
+ */
 @Data
 public class BoardDTO {
 	

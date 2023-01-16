@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+
+/**
+ * CirclePopupOk클래스
+ * 원형 시간표를 수정하는 팝업
+ * @author 4조
+ */
 @WebServlet("/todolist/circlepopupok.do")
 public class CirclePopupOk extends HttpServlet {
     @Override

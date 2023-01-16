@@ -10,6 +10,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * TimeTable 클래스
+ * 시간표
+ * @author 4조
+ */
 @WebServlet("/todolist/timetable.do")
 public class TimeTable extends HttpServlet {
     @Override

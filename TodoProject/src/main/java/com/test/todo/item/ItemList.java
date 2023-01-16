@@ -14,7 +14,14 @@ import javax.servlet.http.HttpSession;
 
 import com.test.todo.member.PlusRewardDAO;
 
-
+/**
+ * ItemList 클래스
+ * Item list를 페이징하여 출력합니다
+ * 로그인한 사용자의 보유 포인트를 확인합니다.
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/item/itemlist.do")
 public class ItemList extends HttpServlet {
 
@@ -61,7 +68,7 @@ public class ItemList extends HttpServlet {
 		
 		String pagebar = "";	//페이지 바 태그
 		
-		totalCount = dao.getTotalCount(map);
+		totalCount = dao.getTotalCount();
 		totalPage = (int)Math.ceil((double)totalCount/pageSize);	// Math.ceil() : 올림
 		
 		int blockSize = 10; //하단 페이지 수, 한번에 보여지는 페이지 수

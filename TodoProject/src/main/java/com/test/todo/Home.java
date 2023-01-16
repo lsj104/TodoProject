@@ -9,7 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+/**
+ * 
+ * Home 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/home.do")
 public class Home extends HttpServlet {
 
@@ -22,5 +28,6 @@ public class Home extends HttpServlet {
 		dispatcher.forward(req, resp);
 
 	}
+	
 
 }

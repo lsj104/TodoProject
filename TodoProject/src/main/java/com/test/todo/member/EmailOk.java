@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 사용자의 이메일을 입력받아 이메일 중복을 검사하기 위한 서블릿
+ * @author 4조
+ *
+ */
 @WebServlet("/member/emailok.do")
 public class EmailOk extends HttpServlet {
 

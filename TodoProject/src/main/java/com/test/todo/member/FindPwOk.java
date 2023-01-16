@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 이메일을 입력받아 임시 비밀번호를 생성하기 위한 서블릿
+ * @author Seojin
+ *
+ */
 @WebServlet("/member/findpwok.do")
 public class FindPwOk extends HttpServlet {
 

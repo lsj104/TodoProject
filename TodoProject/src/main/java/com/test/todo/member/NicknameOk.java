@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 닉네임 중복 여부를 검사하기 위한 서블릿
+ * @author 4조
+ *
+ */
 @WebServlet("/member/nicknameok.do")
 public class NicknameOk extends HttpServlet {
 

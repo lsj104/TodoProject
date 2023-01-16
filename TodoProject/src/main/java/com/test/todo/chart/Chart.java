@@ -16,6 +16,13 @@ import com.test.todo.member.MemberDAO;
 import com.test.todo.member.MemberInfoDTO;
 import com.test.todo.member.PlusRewardDAO;
 
+
+/**
+ * 랭킹 페이지 실행을 위한 서블릿.
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/chart/chart.do")
 public class Chart extends HttpServlet {
 

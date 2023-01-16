@@ -17,6 +17,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 비밀번호 찾기 진행시 임시 비밀번호 발송을 위한 서블릿
+ * @author Seojin
+ *
+ */
 @WebServlet("/member/sendpw.do")
 public class SendPw extends HttpServlet {
 

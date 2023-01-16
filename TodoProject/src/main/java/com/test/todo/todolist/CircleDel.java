@@ -9,6 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * 
+ * 일정 삭제 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/todolist/circledel.do")
 public class CircleDel extends HttpServlet {
     @Override

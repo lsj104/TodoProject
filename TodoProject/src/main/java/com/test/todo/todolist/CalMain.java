@@ -15,7 +15,13 @@ import com.test.todo.challenge.ChallengeDAO;
 import com.test.todo.challenge.ChallengeDTO;
 
 
-
+/**
+ * 
+ * 회원의 일정을 출력 및 추가하는 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/calmain.do")
 public class CalMain extends HttpServlet {
 

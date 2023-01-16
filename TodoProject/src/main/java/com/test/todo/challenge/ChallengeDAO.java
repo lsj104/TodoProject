@@ -8,9 +8,22 @@ import java.util.List;
 
 import com.test.todo.DBUtil;
 
-
+/**
+ * 
+ * ChallengeDAO
+ * 
+ * @author 4조
+ *
+ */
 public class ChallengeDAO {
 	
+	/**
+	 * 
+	 * 검색한 챌린지를 출력하는 메소드
+	 * 
+	 * @param searchText 검색어
+	 * @return 검색한 챌린지 list
+	 */
 	public List<ChallengeDTO> searchChallengeList(String searchText) {
 		Connection conn = null;
 		PreparedStatement stat = null;
@@ -48,6 +61,13 @@ public class ChallengeDAO {
 		return challengeList;
 	}
 	
+	/**
+	 * 
+	 * 가입하지 않은 챌린지를 출력하는 메소드
+	 * 
+	 * @param mseq 회원번호
+	 * @return 챌린지 list
+	 */
 	public List<ChallengeDTO> getAllChallengeList(int mseq) {
 		Connection conn = null;
 		PreparedStatement pstat = null;
@@ -55,9 +75,6 @@ public class ChallengeDAO {
 		ArrayList<ChallengeDTO> challengeList = null;
 		
 		conn = DBUtil.open();
-		
-		
-
 		
 		try {
 			
@@ -87,7 +104,14 @@ public class ChallengeDAO {
 		return challengeList;
 	}
 	
-	
+	/**
+	 * 
+	 * 가입한 챌린지를 출력하는 메소드
+	 * 
+	 * @param nickname 닉네임
+	 * @param mseq 회원번호
+	 * @return 가입한 챌린지 list
+	 */
 	public List<ChallengeDTO> getChallengeList(String nickname, String mseq) {
 		Connection conn = null;
 		PreparedStatement stat = null;
@@ -96,7 +120,7 @@ public class ChallengeDAO {
 		
 		conn = DBUtil.open();
 		
-		String sql = "select * from tblChallenge where seq = (select cseq from tblChallengeMember where mseq= (select mseq from tblMemberInfo where nickname='?'))";
+		String sql = "select * from tblChallenge where seq = (select cseq from tblChallengeMember where mseq= (select mseq from tblMemberInfo where nickname=?))";
 
 		PreparedStatement pstmt = null;
 		
@@ -106,18 +130,20 @@ public class ChallengeDAO {
 			pstmt.setString(1, nickname);
 
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
-    	        challengeList = new ArrayList<>();
-    	        do {
-    	        	ChallengeDTO dto = new ChallengeDTO(rs.getInt("seq"), rs.getString("createDate"), rs.getString("duedatenumber"),
+			
+			while(rs.next()) {
+    	        
+				challengeList = new ArrayList<>();
+    	        	
+    	        ChallengeDTO dto = new ChallengeDTO(rs.getInt("seq"), rs.getString("createDate"), rs.getString("duedatenumber"),
 	    			rs.getString("membercnt"), rs.getInt("cseq"), rs.getString("name"), rs.getString("hseq"), rs.getString("mission"));
     	      
     	        	// System.out.println("dto : " + dto.toString());
     	       
     	        	challengeList.add(dto);
-    	        } while (rs.next());
 		
-			}
+			} 
+			return challengeList;
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -125,6 +151,13 @@ public class ChallengeDAO {
 		return challengeList;
 	}
 	
+	/**
+	 * 
+	 * 카테고리 리스트 출력 메소드
+	 * 
+	 * 
+	 * @return 카테고리 리스트
+	 */
 	public List<CategoryDTO> getCategoryList() { // 카테고리 리스트
 		Connection conn = null;
 		PreparedStatement stat = null;
@@ -158,6 +191,20 @@ public class ChallengeDAO {
 		return categoryList;
 	}
 	
+	
+	/**
+	 * 
+	 * 챌린지 추가 메소드 
+	 * 
+	 * @param mseq  회원번호
+	 * @param name 챌린지 이름
+	 * @param period 모집기간
+	 * @param membercnt 가입가능한 회원수
+	 * @param mission 공동미션
+	 * @param category 카테고리
+	 * 
+	 * @return 실패시 null반환
+	 */
 	public List<ChallengeDTO> createChallenge(int mseq, String name, int period, int membercnt, String mission, int category) {
 		Connection conn = null;
 		PreparedStatement stat = null;
@@ -188,6 +235,12 @@ public class ChallengeDAO {
 	}
 	
 	//추가
+	/**
+	 * 챌린지 가입 메소드
+	 * 
+	 * @param mseq 회원번호
+	 * @param nickname 닉네임
+	 */
 	public void challengejoin(int mseq, String nickname) {
 		Connection conn = null;
 		PreparedStatement stat = null;
@@ -212,6 +265,16 @@ public class ChallengeDAO {
 		}
 		
 	}
+	
+	
+	/**
+	 * 
+	 * 챌린지 가입 메소드
+	 * 
+	 * @param seq 챌린지 번호
+	 * @param mseq 회원번호
+	 * @param nickname 닉네임
+	 */
 	public void challengejoin2 (int seq, int mseq, String nickname) {
 		Connection conn = null;
 		PreparedStatement stat = null;

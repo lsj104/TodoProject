@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * ToDoList 추가 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/todolist/todolistadd.do")
 public class ToDoListAdd extends HttpServlet {
 
@@ -28,6 +35,7 @@ public class ToDoListAdd extends HttpServlet {
 		
 		req.setCharacterEncoding("UTF-8");
 		String content = req.getParameter("content");
+		String type = req.getParameter("type");
 		
 		System.out.println(content);
 		
@@ -37,7 +45,12 @@ public class ToDoListAdd extends HttpServlet {
 		
 			//1.
 			ToDoListDAO dao = new ToDoListDAO();
-			result = dao.todolistAdd((String)session.getAttribute("auth"), content);
+			
+			if (type.equals("1")) {
+				result = dao.todolistAdd((String)session.getAttribute("auth"), content, type);
+			} else if(type.equals("2")) {
+				result = dao.todolistAdd((String)session.getAttribute("auth"), content, type);
+			}
 		
 		}
  

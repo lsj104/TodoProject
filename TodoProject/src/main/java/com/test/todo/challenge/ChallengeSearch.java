@@ -11,6 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 
+ * 챌린지 검색 클래스
+ * 
+ * @author 4조
+ *
+ */
 @WebServlet("/challenge/challengesearch.do")
 public class ChallengeSearch  extends HttpServlet {
 	
