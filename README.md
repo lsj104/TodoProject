@@ -6,7 +6,6 @@
 ## 2. 개발 환경 ⚙️
 <img width="824" alt="image" src="https://user-images.githubusercontent.com/75536654/215104571-57c70d88-f8cb-475a-a6c8-8b6597327c3e.png">
 
-
 ## 3. 요구분석 ✏️
 - 회원가입 후 다양한 템플릿을 통해 자신의 일정을 관리할 수 있다.
 - QnA 게시판을 통해 사용자들간 소통을 할 수 있다.
@@ -19,14 +18,14 @@
 ![KakaoTalk_Photo_2023-01-10-03-31-23](https://user-images.githubusercontent.com/75536654/211381629-c4e63648-54af-4c1a-85af-265b542056bd.png)
 
 ## 3. 팀원 소개 및 업무 분담 👨‍👨‍👧‍👦
-<img width="1211" alt="스크린샷 2023-01-10 오전 3 32 24" src="https://user-images.githubusercontent.com/75536654/211381810-64dd51a6-52bf-4bf2-af0d-26919b178652.png">
+<img width="1162" alt="image" src="https://user-images.githubusercontent.com/75536654/215122377-44417ff7-840f-465d-b300-0f0d56ef5ca5.png">
 
 ## 5. 주요 기능 📚
 <img width="1262" alt="스크린샷 2023-01-10 오전 3 33 57" src="https://user-images.githubusercontent.com/75536654/211382082-3cd21a46-08af-475d-9853-ce9999e33286.png">
 <img width="1262" alt="스크린샷 2023-01-10 오전 3 34 24" src="https://user-images.githubusercontent.com/75536654/211382165-3cad50b4-f2b1-48d5-8b11-af5740fbf50c.png">
 <img width="1262" alt="스크린샷 2023-01-10 오전 3 34 49" src="https://user-images.githubusercontent.com/75536654/211382239-69aa02d2-b378-48d4-b596-5ccce8a2a19c.png">
 <img width="1262" alt="스크린샷 2023-01-10 오전 3 35 19" src="https://user-images.githubusercontent.com/75536654/211382314-f9de8f2b-3bb5-4ead-b9f5-d5310b75e70a.png">
-  
-
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/75536654/215128068-2c3dd482-8948-48ef-b434-349f73a6502e.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/75536654/215127679-5a0a32db-b98e-4c73-bad3-45a286c51d45.gif)
 
 
