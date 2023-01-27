@@ -4,7 +4,7 @@
 - 같은 관심사를 가진 회원들의 소통 및 공동 미션 수행 기능
 
 ## 2. 개발 환경 ⚙️
-<img width="1036" alt="스크린샷 2023-01-10 오전 3 26 58" src="https://user-images.githubusercontent.com/75536654/211380837-469d1988-0994-4ceb-8892-185dd869e1b1.png">
+<img width="820" alt="스크린샷 2023-01-27 오후 10 54 07" src="https://user-images.githubusercontent.com/75536654/215103972-b2c8481a-be7c-48ac-98ea-048ce58d811c.png">
 
 ## 3. 요구분석 ✏️
 - 회원가입 후 다양한 템플릿을 통해 자신의 일정을 관리할 수 있다.
