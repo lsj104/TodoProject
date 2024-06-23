@@ -15,7 +15,7 @@
 - 일일 로그인, 회원가입 등을 통하여 리워드를 획득하여 자신의 스타일에 맞는 테마를 구매하고 적용할 수 있다.
 
 ## 4. 데이터 구조 👩‍💻
-![KakaoTalk_Photo_2023-01-10-03-31-23](https://user-images.githubusercontent.com/75536654/211381629-c4e63648-54af-4c1a-85af-265b542056bd.png)
+<img width="838" alt="pf1data" src="https://github.com/lsj104/TodoProject/assets/75536654/de94be14-cf1d-4fb4-9280-447a52c5e33a">
 
 ## 3. 팀원 소개 및 업무 분담 👨‍👨‍👧‍👦
 <img width="1162" alt="image" src="https://user-images.githubusercontent.com/75536654/215122377-44417ff7-840f-465d-b300-0f0d56ef5ca5.png">
